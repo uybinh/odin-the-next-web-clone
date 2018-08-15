@@ -143,27 +143,51 @@ nav li {
 .bg-2 {
   background: url("https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/08/alex-jones-2-796x419.png");
 }
+
+.bg-3 {
+  background: url("https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/08/erikfinman2-540x270.jpg");
+}
+
+.bg-4 {
+  background: url("https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/09/ps4-controller-540x270.jpg");
+}
+
+.bg-5 {
+  background: url("https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/08/Evernote-Rebrand-516x270.jpg");
+}
+
+.bg-6 {
+  background: url("https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/08/monerocoinhive-480x270.jpg");
+}
 /* ****************************
   cover section style
   ***************************** */
 
 .cover {
-  padding: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-bottom: 4px;
+  padding-top: 4px;
 }
 .cover-story {
   position: relative;
-  min-height: 30vh;
   padding: 2px;
   background-size: cover;
   background-position: center;
   background-clip: content-box;
 }
 
-.cover-story h2 {
-  font-size: 1.2rem
+@media (max-width: 767px) {
+  .cover-story {
+    min-height: 30vh;
+  }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+.cover-story h2 {
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
   .cover {
     height: 60vh;
   }
@@ -173,6 +197,7 @@ nav li {
   .cover {
     height: 75vh;
     max-height: 560px;
+    overflow: hidden;
   }
 }
 
@@ -187,21 +212,21 @@ nav li {
     font-size: 1.5rem;
   }
   .cover-story.big {
-    width: calc(100%/3*2);
+    width: 66.666%;
     height: 100%;
   }
 }
 
 .cover-bg-overlay {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
   background: linear-gradient(rgba(0, 0, 0, 0.3),
                               rgba(0, 0, 0, 0.5) 70%,
                               rgba(0, 0, 0, 0.95));
-  transition: opacity ease-in-out 0.25s;
+  transition: opacity ease-out 0.25s;
 }
 
 .cover-bg-overlay:hover {
@@ -220,4 +245,93 @@ nav li {
 
 .by-line li {
   display: inline-block;
+}
+
+/* *******************
+  Stories section
+  ********************/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 5px;
+}
+
+[class*="col-"] {
+  grid-column: span 12;
+}
+
+@media (min-width: 767px) {
+  .col-md-4 {
+    grid-column: span 4;
+  }
+}
+
+@media (min-width: 1024px) {
+  .col-lg-3 {
+    grid-column: span 3;
+  }
+}
+
+/* *********************
+  wrapper
+  ********************** */
+.wrapper {
+  max-width: 1192px;
+  margin: auto;
+  padding: 20px;
+}
+.stories {
+  width: 100%;
+  padding: 2px;
+}
+
+.stories > :first-child {
+  padding-left: 5px;
+  margin-top: 20px;
+}
+.story {
+  padding: 4px;
+  background-clip: content-box;
+  font-size: .75rem;
+  /* border: 1px solid gray; */
+}
+
+.story h4 {
+  font-size: .8rem;
+  margin-bottom: .5rem;
+}
+
+.story li {
+  display: inline-block;
+}
+
+.story-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 72px;
+  padding-left: 88px;
+}
+
+a.story-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 10px;
+  background-size: cover;
+  background-position: center bottom;
+  transition: all ease-out .3s;
+}
+
+@media (min-width: 768px) {
+  .story-wrapper {
+    padding: 0;
+  }
+  a.story-image {
+    position: relative;
+    width: 100%;
+    height: 135px;
+  }
 }
